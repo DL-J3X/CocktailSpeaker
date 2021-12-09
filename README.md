@@ -14,6 +14,10 @@ The cascaded voice conversion and cocktail speaker decoding is implemented with 
 - Use perturb x-vector method by using https://github.com/DL-J3X/espnet/blob/master/egs2/libritts/tts1/run_direct_perturb.sh
 
 ## Evaluation
+The evaluation scripts are both in evaluation-kaldi and evaluation-extraction. The evaluation is based off of ESPNet xvector extraction and VoxCeleb eer calculation.
+
+- Prepare the data with https://github.com/DL-J3X/evaluation-extraction
+- Evaluate with https://github.com/DL-J3X/evaluation-kaldi/blob/master/egs/librispeech/s5/extract_xvector.sh and https://github.com/DL-J3X/evaluation-kaldi/blob/master/egs/librispeech/s5/eer.sh
 
 ### Speaker Verification
 
