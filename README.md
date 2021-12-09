@@ -19,4 +19,15 @@ The cascaded voice conversion and cocktail speaker decoding is implemented with 
 
 ### ASR Inference
 
+```
+0. Run ESPnet egs2/LibriTTS/tts1 recipe stage 1.
+1. Generate the wav files for ASR evaluation and put them in a directory, e.g. egs2/libritts/tts1/data/text_clean_new/wavs
+2. cd egs2/LibriTTS/tts1/data/text_clean_new
+3. cp ../test_clean/* .
+4. awk '{print($1, "data/test_clean_new/wav/"$1".wav}' utt2spk > wav.scp
+5. cd ../../egs2/gigaspeech/asr1
+6. ln -s ../../libritts/tts1/data .
+7. bash run.sh --stage 3 --stop-stage 3 --test_sets "test_clean_new"
+8. bash run.sh --stage 12 --skip_train true --download_model "Shinji_Watanabe/gigaspeech_asr_train_asr_raw_en_bpe5000_valid.acc.ave" 
+```
 
